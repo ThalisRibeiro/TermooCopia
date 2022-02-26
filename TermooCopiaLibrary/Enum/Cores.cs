@@ -8,8 +8,9 @@ namespace TermooCopiaLibrary.Classes
 {
     public enum Cores
     {
-        Red = 0,
-        Yellow = 1,
-        Green = 2,
+        White,
+        Red,
+        Yellow,
+        Green,
     }
 }
