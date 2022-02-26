@@ -1,0 +1,12 @@
+C:\Users\thali\source\repos\TermooCopia\TermooCopiaLibrary\bin\Debug\net6.0\TermooCopiaLibrary.deps.json
+C:\Users\thali\source\repos\TermooCopia\TermooCopiaLibrary\bin\Debug\net6.0\TermooCopiaLibrary.dll
+C:\Users\thali\source\repos\TermooCopia\TermooCopiaLibrary\bin\Debug\net6.0\TermooCopiaLibrary.pdb
+C:\Users\thali\source\repos\TermooCopia\TermooCopiaLibrary\obj\Debug\net6.0\TermooCopiaLibrary.csproj.AssemblyReference.cache
+C:\Users\thali\source\repos\TermooCopia\TermooCopiaLibrary\obj\Debug\net6.0\TermooCopiaLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thali\source\repos\TermooCopia\TermooCopiaLibrary\obj\Debug\net6.0\TermooCopiaLibrary.AssemblyInfoInputs.cache
+C:\Users\thali\source\repos\TermooCopia\TermooCopiaLibrary\obj\Debug\net6.0\TermooCopiaLibrary.AssemblyInfo.cs
+C:\Users\thali\source\repos\TermooCopia\TermooCopiaLibrary\obj\Debug\net6.0\TermooCopiaLibrary.csproj.CoreCompileInputs.cache
+C:\Users\thali\source\repos\TermooCopia\TermooCopiaLibrary\obj\Debug\net6.0\TermooCopiaLibrary.dll
+C:\Users\thali\source\repos\TermooCopia\TermooCopiaLibrary\obj\Debug\net6.0\refint\TermooCopiaLibrary.dll
+C:\Users\thali\source\repos\TermooCopia\TermooCopiaLibrary\obj\Debug\net6.0\TermooCopiaLibrary.pdb
+C:\Users\thali\source\repos\TermooCopia\TermooCopiaLibrary\obj\Debug\net6.0\ref\TermooCopiaLibrary.dll

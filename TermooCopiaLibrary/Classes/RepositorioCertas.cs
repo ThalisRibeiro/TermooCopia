@@ -45,7 +45,13 @@ namespace TermooCopiaLibrary.Classes
         }
         public string RecebePalavra(string palavraRecebida)
         {
+            EscolhePalavra();
             PalavraEnviada enviada = new(palavraRecebida);
+
+            var disposablePalavra = palavras[i];
+            disposablePalavra.usada = true;
+            palavras[i] = disposablePalavra;
+
             return VerificaPalavra(enviada);
         }
 

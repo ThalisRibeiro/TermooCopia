@@ -12,14 +12,17 @@ namespace TermooCopiaLibrary.Classes
         public  PalavraCerta(string palavra)
         {
             Letra disposableLetra = new();
+            List<Letra> disposableLetraList = new();
+
             var palavraArray = palavra.ToCharArray();
             for (int i = 0; i < palavraArray.Length; i++)
             {
                 disposableLetra.caracterie = palavraArray[i];
                 disposableLetra.index=i;
+                disposableLetraList.Add(disposableLetra);
             }
             usada = false;
-            letras.Add(disposableLetra);
+            letras = disposableLetraList;
         }
 
 

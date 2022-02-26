@@ -24,8 +24,8 @@ namespace TermooCopiaLibrary.Classes
                 bool baba = (letraRecebida == letras[i].caracterie);
                 switch (baba)
                 {
-                    case true: retorno = true; 
-                        break;
+                    case true: retorno = true;
+                        return retorno;
                     
                     default:
                         break;

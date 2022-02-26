@@ -11,13 +11,17 @@ namespace TermooCopiaLibrary.Classes
         public PalavraEnviada(string palavra)
         {
             Letra disposableLetra = new();
+            List<Letra> disposableLetraList = new();
+
             var palavraArray = palavra.ToCharArray();
             for (int i = 0; i < palavraArray.Length; i++)
             {
                 disposableLetra.caracterie = palavraArray[i];
                 disposableLetra.index = i;
+                disposableLetra.cor = Cores.White;
+                disposableLetraList.Add(disposableLetra);
             }
-            letras.Add(disposableLetra);
+            letras = disposableLetraList;
         }
 
         private void AtualizaPalavra(List<Letra> letrasRecebidas)
