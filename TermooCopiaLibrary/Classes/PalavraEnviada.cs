@@ -19,5 +19,26 @@ namespace TermooCopiaLibrary.Classes
             }
             letras.Add(disposableLetra);
         }
+
+        private void AtualizaPalavra(List<Letra> letrasRecebidas)
+        {
+            this.letras = letrasRecebidas;
+        }
+        public bool VerificaVitoria(List<Letra> letrasRecebidas)
+        {
+            this.AtualizaPalavra(letrasRecebidas);
+            var vitoria = true;
+            for (int i = 0; i < letras.Count; i++)
+            {
+                if (letras[i].cor != Cores.Green)
+                    vitoria = false;
+            }
+            return vitoria;
+        }
+
+        public List<Letra> EnviaPalavra()
+        {
+            return this.letras;
+        }
     }
 }
