@@ -69,10 +69,6 @@ namespace TermooCopiaLibrary.Classes
                         break;
                 }
             }
-            /*Letra disposableLetra = new();
-
-            disposableLetra.caracterie = letras[0].caracterie;
-            */
             return letrasRecebida;
         }
     }
