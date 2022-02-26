@@ -8,12 +8,54 @@ namespace TermooCopiaLibrary.Classes
 {
     public abstract class Palavra
     {
-        protected List<Letra> letras=new();
-        protected struct Letra
+        //protected List<Letra> letras=new();
+        protected List<Letra> letras = new();
+        public struct Letra
         {
             public char caracterie;
-            public Cores cor;
+            public Cores cor ;
             public int index;
+        }
+        public bool ContemLetras(char letraRecebida)
+        {
+            var retorno = false;
+            for (int i = 0; i < letras.Count; i++)
+            {
+                bool baba = (letraRecebida == letras[i].caracterie);
+                switch (baba)
+                {
+                    case true: retorno = true; 
+                        break;
+                    
+                    default:
+                        break;
+                }
+            }
+
+            return retorno;
+        }
+
+        public List<int> BuscaIguais(char letraRecebida)
+        {
+            List<int> listaIndex = new List<int>();
+            for (int i = 0; i < letras.Count; i++)
+            {
+                if (letraRecebida == letras[i].caracterie)
+                {
+                    listaIndex.Add(i);
+                }
+            }
+            return listaIndex;
+        }
+
+        protected void PadronizaBranco()
+        {
+            for (int i = 0; i < this.letras.Count; i++)
+            {
+                var disposableLetras = this.letras[i];
+                disposableLetras.cor = Cores.White;
+                this.letras[i]=disposableLetras;
+            }
         }
     }
 }
