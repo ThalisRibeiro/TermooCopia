@@ -16,7 +16,7 @@ namespace TermooCopiaLibrary.Classes
             public Cores cor ;
             public int index;
         }
-        public bool ContemLetras(char letraRecebida)
+        protected bool ContemLetras(char letraRecebida)
         {
             var retorno = false;
             for (int i = 0; i < letras.Count; i++)
@@ -35,7 +35,7 @@ namespace TermooCopiaLibrary.Classes
             return retorno;
         }
 
-        public List<int> BuscaIguais(char letraRecebida)
+        protected List<int> BuscaIguais(char letraRecebida)
         {
             List<int> listaIndex = new List<int>();
             for (int i = 0; i < letras.Count; i++)
