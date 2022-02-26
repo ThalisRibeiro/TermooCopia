@@ -8,7 +8,7 @@ namespace TermooCopiaLibrary.Classes
 {
     public class PalavraCerta : Palavra
     {
-        
+        public bool usada;
         public  PalavraCerta(string palavra)
         {
             Letra disposableLetra = new();
@@ -18,39 +18,64 @@ namespace TermooCopiaLibrary.Classes
                 disposableLetra.caracterie = palavraArray[i];
                 disposableLetra.index=i;
             }
+            usada = false;
             letras.Add(disposableLetra);
         }
 
 
 
-        private Cores Recursivo(int indexRecebido ,List<int> listaIndex, int i =0)
+        private Cores Recursivo(int indexRecebido ,List<int> listaIndex, int i =0, bool hasYellow = false)
         {
             Cores cor;
-            if (indexRecebido == listaIndex[i])
+
+            if (this.letras[listaIndex[i]].cor == Cores.Yellow || this.letras[listaIndex[i]].cor == Cores.White)
+            {
+                hasYellow = true;
+            }
+
+            if (indexRecebido == listaIndex[i] && this.letras[listaIndex[i]].cor !=Cores.Green)
             {
                 Letra disposableLetra = this.letras[indexRecebido];
                 cor = Cores.Green;
                 disposableLetra.cor = cor;
                 this.letras[indexRecebido] = disposableLetra;
             }
-            else if (listaIndex.Count==i-1)
+            else if (listaIndex.Count-1 == i && hasYellow==false)
             {
                 Letra disposableLetra = this.letras[indexRecebido];
-                cor = Cores.Yellow;
-                disposableLetra.cor = Cores.Yellow;
+                cor = Cores.Red;
+                disposableLetra.cor = cor;
                 this.letras[indexRecebido] = disposableLetra;
             }
+            else if (listaIndex.Count - 1 == i)
+            {
+                cor = Cores.Red;
+                bool sai = false;
+                do
+                {
+                    if (this.letras[listaIndex[i]].cor != Cores.Yellow && this.letras[listaIndex[i]].cor != Cores.Green)
+                    {
+                        Letra disposableLetra = this.letras[indexRecebido];
+                        cor = Cores.Yellow;
+                        disposableLetra.cor = Cores.Yellow;
+                        this.letras[indexRecebido] = disposableLetra;
+                        sai = true;
+                    }
+                    else i -= 1;
+                } while (sai||i<0);
+            }
+
             else
             {
-                cor = Recursivo(indexRecebido, listaIndex, i + 1);
+                cor = Recursivo(indexRecebido, listaIndex, i + 1,hasYellow);
             }
+
             return cor;
         }
 
         public List<Letra> VerificaAcerto(List<Letra> letrasRecebida)
         {
-            
-            
+            this.PadronizaBranco();
             for (int i = 0; i < 5; i++)
             {
                 switch (ContemLetras(letrasRecebida[i].caracterie))
