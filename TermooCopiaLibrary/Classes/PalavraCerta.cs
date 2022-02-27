@@ -31,24 +31,24 @@ namespace TermooCopiaLibrary.Classes
         {
             Cores cor;
 
-            if (this.letras[listaIndex[i]].cor == Cores.Yellow || this.letras[listaIndex[i]].cor == Cores.White)
+            if (this.letras[listaIndex[i]].cor == Cores.Yellow || this.letras[listaIndex[i]].cor == Cores.Green)
             {
                 hasYellow = true;
             }
 
             if (indexRecebido == listaIndex[i] && this.letras[listaIndex[i]].cor !=Cores.Green)
             {
-                Letra disposableLetra = this.letras[indexRecebido];
+                Letra disposableLetra = this.letras[listaIndex[i]];
                 cor = Cores.Green;
                 disposableLetra.cor = cor;
-                this.letras[indexRecebido] = disposableLetra;
+                this.letras[listaIndex[i]] = disposableLetra;
             }
             else if (listaIndex.Count-1 == i && hasYellow==false)
             {
-                Letra disposableLetra = this.letras[indexRecebido];
-                cor = Cores.Red;
+                Letra disposableLetra = this.letras[listaIndex[i]];
+                cor = Cores.Yellow;
                 disposableLetra.cor = cor;
-                this.letras[indexRecebido] = disposableLetra;
+                this.letras[listaIndex[i]] = disposableLetra;
             }
             else if (listaIndex.Count - 1 == i)
             {
@@ -58,14 +58,14 @@ namespace TermooCopiaLibrary.Classes
                 {
                     if (this.letras[listaIndex[i]].cor != Cores.Yellow && this.letras[listaIndex[i]].cor != Cores.Green)
                     {
-                        Letra disposableLetra = this.letras[indexRecebido];
+                        Letra disposableLetra = this.letras[listaIndex[i]];
                         cor = Cores.Yellow;
                         disposableLetra.cor = Cores.Yellow;
-                        this.letras[indexRecebido] = disposableLetra;
+                        this.letras[listaIndex[i]] = disposableLetra;
                         sai = true;
                     }
                     else i -= 1;
-                } while (sai||i<0);
+                } while (sai == false&&i>-1);
             }
 
             else
@@ -92,7 +92,7 @@ namespace TermooCopiaLibrary.Classes
                     default:
 
                         Letra disposableLetra2 = letrasRecebida[i];
-                        disposableLetra.cor = Cores.Red;
+                        disposableLetra2.cor = Cores.Red;
                         letrasRecebida[i] = disposableLetra2;
                         break;
                 }

@@ -24,7 +24,7 @@ namespace TermooCopiaLibrary.Classes
             letras = disposableLetraList;
         }
 
-        private void AtualizaPalavra(List<Letra> letrasRecebidas)
+        public void AtualizaPalavra(List<Letra> letrasRecebidas)
         {
             this.letras = letrasRecebidas;
         }
@@ -35,7 +35,10 @@ namespace TermooCopiaLibrary.Classes
             for (int i = 0; i < letras.Count; i++)
             {
                 if (letras[i].cor != Cores.Green)
+                {
                     vitoria = false;
+                    return vitoria;
+                }
             }
             return vitoria;
         }
