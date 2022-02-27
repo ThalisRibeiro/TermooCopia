@@ -24,6 +24,22 @@ namespace TermooCopiaLibrary.Classes
             letras = disposableLetraList;
         }
 
+        public PalavraEnviada(char [] palavraArray)
+        {
+            Letra disposableLetra = new();
+            List<Letra> disposableLetraList = new();
+
+            for (int i = 0; i < palavraArray.Length; i++)
+            {
+                disposableLetra.caracterie = palavraArray[i];
+                disposableLetra.index = i;
+                disposableLetra.cor = Cores.White;
+                disposableLetraList.Add(disposableLetra);
+            }
+            letras = disposableLetraList;
+        }
+
+
         public void AtualizaPalavra(List<Letra> letrasRecebidas)
         {
             this.letras = letrasRecebidas;
